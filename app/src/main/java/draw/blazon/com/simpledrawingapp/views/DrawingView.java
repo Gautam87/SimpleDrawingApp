@@ -14,7 +14,7 @@ public class DrawingView extends View {
 
     private Paint mSquarePaint;
     private Point mPoint;
-    private float mSize = 100.0f;
+    private float mSize = 400.0f;
 
     public DrawingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -36,9 +36,9 @@ public class DrawingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         if (mPoint != null) {
-            canvas.drawRect(mPoint.x, mPoint.y,
-                    mPoint.x + mSize,
-                    mPoint.y + mSize, mSquarePaint);
+            canvas.drawRect(mPoint.x - mSize / 2, mPoint.y - mSize / 2,
+                    mPoint.x + mSize / 2,
+                    mPoint.y + mSize / 2, mSquarePaint);
         }
     }
 
