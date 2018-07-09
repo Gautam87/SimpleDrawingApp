@@ -4,6 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "draw.blazon.com.simpledrawingapp"
+        vectorDrawables.useSupportLibrary = true
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
@@ -32,5 +33,7 @@ dependencies {
 
     implementation 'com.pes.materialcolorpicker:library:1.2.0'
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+    implementation 'gun0912.ted:tedpermission:2.2.0'
 
 }

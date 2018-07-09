@@ -91,4 +91,9 @@ public class DrawingView extends View {
         mSquareItems = new ArrayList<>();
         postInvalidate();
     }
+
+    public ArrayList<SquareItem> getSquareItems() {
+        return mSquareItems;
+    }
+
 }
