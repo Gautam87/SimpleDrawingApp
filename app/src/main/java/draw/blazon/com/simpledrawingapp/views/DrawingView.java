@@ -79,4 +79,16 @@ public class DrawingView extends View {
         mSize = 10.0f + size;
     }
 
+    public int getSelectedColor() {
+        return mSelectedColor;
+    }
+
+    public void setSelectedColor(int mSelectedColor) {
+        this.mSelectedColor = mSelectedColor;
+    }
+
+    public void resetDrawing() {
+        mSquareItems = new ArrayList<>();
+        postInvalidate();
+    }
 }
