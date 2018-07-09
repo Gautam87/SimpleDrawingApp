@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SimpleDrawingApp</string>
+    <string name="app_name">Color Square</string>
     <string name="agree">Yes</string>
     <string name="disagree">No</string>
     <string name="confirmation">Confirmation</string>
