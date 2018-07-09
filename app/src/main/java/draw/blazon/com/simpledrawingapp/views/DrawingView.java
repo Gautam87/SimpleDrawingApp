@@ -10,16 +10,19 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class DrawingView extends View {
 
     private Paint mSquarePaint;
-    private Point mPoint;
+    private ArrayList<Point> mSquarePoints;
     private float mSize = 400.0f;
 
     public DrawingView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         setFocusable(true);
         setFocusableInTouchMode(true);
+        mSquarePoints = new ArrayList<>();
         setupPaint();
     }
 
@@ -35,10 +38,13 @@ public class DrawingView extends View {
     // Draw each circle onto the view
     @Override
     protected void onDraw(Canvas canvas) {
-        if (mPoint != null) {
-            canvas.drawRect(mPoint.x - mSize / 2, mPoint.y - mSize / 2,
-                    mPoint.x + mSize / 2,
-                    mPoint.y + mSize / 2, mSquarePaint);
+
+        for (Point point : mSquarePoints) {
+            if (point != null) {
+                canvas.drawRect(point.x - mSize / 2, point.y - mSize / 2,
+                        point.x + mSize / 2,
+                        point.y + mSize / 2, mSquarePaint);
+            }
         }
     }
 
@@ -46,7 +52,7 @@ public class DrawingView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float touchX = event.getX();
         float touchY = event.getY();
-        mPoint = new Point(Math.round(touchX), Math.round(touchY));
+        mSquarePoints.add(new Point(Math.round(touchX), Math.round(touchY)));
         postInvalidate();
         return true;
     }
