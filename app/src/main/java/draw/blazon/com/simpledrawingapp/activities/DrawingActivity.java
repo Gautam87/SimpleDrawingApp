@@ -86,7 +86,7 @@ public class DrawingActivity extends AppCompatActivity {
             @Override
             public void onColorChosen(int color) {
                 drawingView.setSelectedColor(color);
-                mColorPicker.hide();
+                mColorPicker.dismiss();
             }
         });
     }
