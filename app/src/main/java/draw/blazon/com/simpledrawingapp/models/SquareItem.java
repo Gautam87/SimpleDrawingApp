@@ -49,8 +49,8 @@ public class SquareItem {
         ArrayList<Coordinate> coordinates = new ArrayList<>();
         coordinates.add(new Coordinate(Math.round(getPoint().x - getSize()/2) , Math.round(getPoint().y - getSize()/2))); //top left
         coordinates.add(new Coordinate(Math.round(getPoint().x - getSize()/2) , Math.round(getPoint().y + getSize()/2))); //bottom left
-        coordinates.add(new Coordinate(Math.round(getPoint().x + getSize()/2) , Math.round(getPoint().y + getSize()/2))); //top right
-        coordinates.add(new Coordinate(Math.round(getPoint().x + getSize()/2) , Math.round(getPoint().y - getSize()/2))); //bottom right
+        coordinates.add(new Coordinate(Math.round(getPoint().x + getSize()/2) , Math.round(getPoint().y + getSize()/2))); //bottom right
+        coordinates.add(new Coordinate(Math.round(getPoint().x + getSize()/2) , Math.round(getPoint().y - getSize()/2))); //top right
         return coordinates;
     }
 
